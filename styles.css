@@ -32,7 +32,7 @@ body {
 
 /* Header and Hero Section */
 .header-hero {
-    background-image: url("images/hero-banner.jpg");
+    background-image: url("images/pexels-asif-khan-779684638-29674761.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,17 +62,27 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
     text-decoration: none;
     font-family: var(--font-body);
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
 }
 
 .nav-links a:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: var(--highlight-color); /* Optional: Change color on hover */
     cursor: pointer;
 }
 
 .logo > h4 {
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+
+.logo > h4:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: var(--highlight-color); /* Optional: Change color on hover */
+    cursor: pointer;
 }
 
 .cta-button {
@@ -132,6 +142,13 @@ body {
     color: var(--text-color-light);
     font-size: 1.5rem;
     text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+
+.mobile-nav-links a:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: var(--highlight-color); /* Optional: Change color on hover */
+    cursor: pointer;
 }
 
 .close-button {
@@ -155,11 +172,16 @@ body {
 }
 
 .hero-overlay > h1 {
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
     text-align: center;
     font-family: var(--font-heading);
     font-size: 2.5rem;
     line-height: 1.2;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+.hero-overlay > h1:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: black; /* Optional: Change color on hover */
 }
 
 /* Responsive Design */
