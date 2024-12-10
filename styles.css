@@ -13,6 +13,7 @@
     --text-color-light: #FFFFFF;
 
     --navbar-height: 70px;
+    --hero-height: 650px;
     --button-padding: 10px 20px;
 }
 
@@ -29,57 +30,66 @@ body {
     line-height: 1.6;
 }
 
+/* Header and Hero Section */
+.header-hero {
+    background-image: url("images/hero-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(var(--navbar-height) + var(--hero-height));
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Navbar */
 .navbar {
-    display: flex; /* Creates a flexible layout */
-    justify-content: space-around; /* Distributes .nav-links and .nav-actions evenly */
-    align-items: center; /* Vertically centers the items */
-    padding: 20px 50px; /* Adds horizontal padding for spacing */
-    width: 100%; /* Ensures the navbar spans the full width */
-    box-sizing: border-box; /* Ensures padding is included in width calculations */
-    background-color: var(--text-color-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    width: 100%;
+    height: var(--navbar-height);
+    box-sizing: border-box;
 }
 
 .nav-links {
-    display: flex; /* Creates a flexible layout for the links */
-    justify-content: center; /* Centers the links */
-    flex-grow: 1; /* Allows .nav-links to take up available space */
-    gap: 20px; /* Adds spacing between the links */
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 20px;
 }
 
-
-.nav-links > a {
-    font-style: var(--font-body);
+.nav-links a {
     color: var(--text-color-light);
-    cursor: pointer;
     text-decoration: none;
+    font-family: var(--font-body);
 }
 
-a:hover {
+.nav-links a:hover {
     cursor: pointer;
+}
+
+.logo > h4 {
+    color: var(--text-color-light);
 }
 
 .cta-button {
-    padding: 10px 20px; /* Adds padding for the button */
-    background-color: #F5A31F; /* Example background color */
-    color: white; /* Button text color */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Adds rounded corners */
-    cursor: pointer; /* Changes cursor to a pointer */
-    font-family: "Outfit", sans-serif; /* Matches your typography */
+    padding: var(--button-padding);
+    background-color: var(--highlight-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-heading);
 }
 
 .cta-button:hover {
-    background-color: #D47C17; /* Darkens the button color on hover */
+    background-color: #D47C17;
 }
 
-.hamburger-icon {
-    display: none;
-}
-
-.logo>h4 {
-    color: var(--text-color-light);
-}
-
+/* Hamburger Menu */
 .hamburger-icon {
     display: none;
     flex-direction: column;
@@ -94,7 +104,6 @@ a:hover {
     background-color: var(--text-color-light);
 }
 
-/* Mobile Menu */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -136,18 +145,49 @@ a:hover {
     cursor: pointer;
 }
 
+/* Hero Overlay */
+.hero-overlay {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-overlay > h1 {
+    color: var(--text-color-light);
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links, .nav-actions {
+    .nav-links {
         display: none;
     }
 
     .navbar {
         justify-content: space-between;
+        padding: 20px;
     }
 
     .hamburger-icon {
         display: flex;
+    }
+
+    .hero-overlay > h1 {
+        font-size: 2rem;
+    }
+    .cta-button {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay > h1 {
+        font-size: 1.5rem;
     }
 }
 
