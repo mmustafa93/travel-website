@@ -9,18 +9,37 @@
 <body>
     <header id="hero-container" class="hero-section">
         <nav class="navbar">
+            <div class="logo">
+                <h4>S&M TRAVELS</h4>
+            </div>
             <div class="nav-links">
-                <a href="#destinations">Destinations</a>
-                <a href="#about-us">About Us</a>
-                <a href="#discover">Discover</a>
+                <a href="#destinations">DESTINATIONS</a>
+                <a href="#about-us">ABOUT US</a>
+                <a href="#discover">DISCOVER</a>
             </div>
             <div class="nav-actions">
                 <button class="cta-button">CONTACT</button>
             </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span class="hamburger-icon-line"></span>
+                <span class="hamburger-icon-line"></span>
+                <span class="hamburger-icon-line"></span>
+            </div>
         </nav>
-        <div class="hero-overlay">
-            <h1 id="hero-header">Make Every journey unforgettable!</h1>
+        <div id="mobile-menu" class="mobile-menu">
+            <button class="close-button" onclick="toggleMenu()">&#x2715;</button>
+            <div class="mobile-nav-links">
+                <a href="#destinations" onclick="toggleMenu()">DESTINATIONS</a>
+                <a href="#about-us" onclick="toggleMenu()">ABOUT US</a>
+                <a href="#discover" onclick="toggleMenu()">DISCOVER</a>
+            </div>
         </div>
     </header>
+    <main>
+        <section class="hero-overlay">
+                <h1 id="hero-header">MAKE EVERY JOURNERY UNFORGETTABLE!</h1>
+        </section>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>
