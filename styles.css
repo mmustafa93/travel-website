@@ -18,17 +18,25 @@
 }
 
 /* General Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    outline: 1px solid red;
 }
 
 body {
     font-family: var(--font-body);
     color: var(--text-color-dark);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
 
 /* Header and Hero Section */
 .header-hero {
@@ -234,6 +242,12 @@ body {
     font-style: var(--font-body);
     font-weight: medium;
     font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+
+.text-container>h2:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: black; /* Optional: Change color on hover */
 }
 
 .text-container>p {
@@ -254,26 +268,36 @@ body {
     z-index: -1; /* Places the second image behind the first image */
 }
 
+.animation-image {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animation-image:hover {
+    transform: rotate(1deg);
+}
+
+
 .usp-section {
     background-color: #FEF7F1;
-    padding: 100px 0;
+    padding: 100px;
+    margin: 0 auto; 
 }
+
 .usp {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-
 }
 
 .usp-image {
-    max-width: 620px;
+    width: 50%;
     max-height: 464px;
+    object-fit: cover;
 }
 
 .usp-text {
-    max-width: 381px;
-    max-height: 125px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -293,6 +317,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 100px 0;
+    gap: 60px;
 }
 
 .explore-upcoming-tours {
@@ -305,10 +330,22 @@ body {
 
 .tour {
     text-align: center;
+    width: 33%;
+}
+
+.tour-image {
+    width: 100%;
+    margin-bottom: -70px;
+}
+
+.tour-btn {
+    margin-top: 60px;
 }
 
 .tour-destination {
-    margin-bottom: 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .testimonials {
@@ -350,6 +387,11 @@ body {
     justify-content: center;
     align-items: center;
     gap: 50px;
+}
+
+.contact-paragraph {
+    max-width: 600px;
+    text-align: center;
 }
 
 .newsletter {
@@ -395,6 +437,47 @@ footer {
     cursor: pointer;
 }
 
+h1,h2,h3,h4,h5,h6,p {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+
+h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover,p:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: black; /* Optional: Change color on hover */
+}
+
+.animation-black {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+
+.animation-black:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: black; /* Optional: Change color on hover */
+}
+
+.animation-accent {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+
+.animation-accent:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: var(--accent-color); /* Optional: Change color on hover */
+}
+
+.socials-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.socials-icons a {
+    color: #000; /* Default color */
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.socials-icons a:hover {
+    color: #ff6347; /* Add hover effect */
+}
 /* Consolidated Responsive Design */
 @media (max-width: 1050px) {
     .image-container-2 {
@@ -439,7 +522,7 @@ footer {
     }
 
     .image-text-subsection-1 {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
         gap: 20px;
@@ -450,18 +533,12 @@ footer {
         height: auto;
     }
 
-    .text-container {
-        position: absolute;
-        text-align: center;
-        width: 90%;
-    }
-
     .text-container > h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .text-container > p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         transition: transform 0.3s ease, color 0.3s ease;
     }
 
@@ -473,11 +550,55 @@ footer {
     .image-container-2 {
         display: none;
     }
+    .usp-section {
+        padding: 100px 50px;
+    }
+    .usp {
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-bottom: 100px;
+    }
+    .usp-text,
+    .usp-image {
+        width: 100%;
+    }
+    .usp:nth-child(even){
+        flex-direction: row;
+    }
+    .usp:last-child{
+        margin-bottom: 0;
+    }
+    .tour:first-child,
+    .tour:last-child {
+        display: none;
+    }
+    .tours {
+        justify-content: center;
+    }
+    .tour {
+        width: 80%;
+    }
+    .tour-btn {
+        display: block;
+        margin: 0 auto;
+    }
+    .contact-btn {
+        display: block;
+    }
+    .contact-paragraph {
+        max-width: 360px;
+    }
+    .footer-links:first-child {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-overlay > h1 {
         font-size: 1.5rem;
+    }
+    .newsletter>p>a {
+        display: block;
     }
 }
 
