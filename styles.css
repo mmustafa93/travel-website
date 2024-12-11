@@ -254,6 +254,54 @@ body {
     z-index: -1; /* Places the second image behind the first image */
 }
 
+.usp-section {
+    background-color: #FEF7F1;
+    padding: 100px 0;
+}
+.usp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.usp-image {
+    max-width: 620px;
+    max-height: 464px;
+}
+
+.usp-text {
+    max-width: 381px;
+    max-height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.usp-text>p {
+    text-align: center;
+}
+
+.usp:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.tours-section {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0;
+}
+
+.explore-upcoming-tours {
+    text-align: center;
+}
+
+.tours {
+    display: flex;
+}
 /* Consolidated Responsive Design */
 @media (max-width: 1050px) {
     .image-container-2 {
