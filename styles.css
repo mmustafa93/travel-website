@@ -184,7 +184,91 @@ body {
     color: black; /* Optional: Change color on hover */
 }
 
-/* Responsive Design */
+.text-container > h2 {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+.text-container > h2:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: black; /* Optional: Change color on hover */
+}
+
+.text-container > p {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for movement and color change */
+}
+.text-container > p:hover {
+    transform: translateY(-5px); /* Moves the link up slightly */
+    color: var(--accent-color); /* Optional: Change color on hover */
+}
+
+.image-text-section {
+    margin: 150px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-text-subsection-1 {
+    display: flex;
+    gap: 110px;
+}
+
+.image-container-1>img {
+    max-width: 473px;
+}
+
+.image-container-2>img {
+    max-width: 497px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 465px;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.text-container>h2 {
+    color: var(--text-color-dark);
+    font-style: var(--font-body);
+    font-weight: medium;
+    font-size: 24px;
+}
+
+.text-container>p {
+    color: var(--text-color-dark);
+    font-style: var(--font-body);
+    font-weight: medium;
+    font-size: 16px;
+}
+
+.image-container-1,
+.image-container-2 {
+    position: relative; /* Enables the use of z-index */
+}
+
+.image-container-2 {
+    margin-left: 250px;
+    margin-top: -150px; /* Adjust this value to move the image upward */
+    z-index: -1; /* Places the second image behind the first image */
+}
+
+/* Consolidated Responsive Design */
+@media (max-width: 1050px) {
+    .image-container-2 {
+        display: none;
+    }
+
+    .image-text-subsection-1 {
+        gap: 20px;
+    }
+
+    .image-text-section {
+        margin: 100px 0;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -202,7 +286,50 @@ body {
     .hero-overlay > h1 {
         font-size: 2rem;
     }
+
     .cta-button {
+        display: none;
+    }
+
+    .image-text-section {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .image-text-subsection-1 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .image-container-1 > img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text-container {
+        position: absolute;
+        text-align: center;
+        width: 90%;
+    }
+
+    .text-container > h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-container > p {
+        font-size: 1rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .text-container > p:hover {
+        transform: translateY(-5px);
+        color: var(--highlight-color);
+    }
+
+    .image-container-2 {
         display: none;
     }
 }
@@ -210,6 +337,31 @@ body {
 @media (max-width: 480px) {
     .hero-overlay > h1 {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .hamburger-icon {
+        width: 30px;
+        height: auto;
+    }
+
+    .text-container > h2 {
+        font-size: 1.25rem;
+    }
+
+    .text-container > p {
+        font-size: 0.875rem;
     }
 }
 
