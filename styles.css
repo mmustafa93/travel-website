@@ -612,6 +612,8 @@ h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover,p:hover {
 
 }
 
+
+
 @media (max-width: 480px) {
     .hero-overlay > h1 {
         font-size: 1.5rem;
